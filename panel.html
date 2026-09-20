@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پنل حساب‌یار</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="min-h-screen">
+  <div class="flex min-h-screen">
+    <aside id="sidebar" class="no-print fixed inset-y-0 start-0 z-40 w-64 bg-white border-e-4 border-slate-900 p-3 hidden lg:block">
+      <div class="flex items-center gap-2 font-extrabold mb-4 px-1">
+        <span class="w-9 h-9 rounded-xl bg-blue-600 text-white border-2 border-slate-900 grid place-items-center">📘</span>
+        <span data-i18n="brand">حساب‌یار</span>
+      </div>
+      <nav class="space-y-2 text-sm font-bold">
+        <button class="sidebar-link btn w-full justify-start active" data-view="dash">📊 <span data-i18n="dash"></span></button>
+        <button class="sidebar-link btn w-full justify-start" data-view="invoices">🧾 <span data-i18n="invoices"></span></button>
+        <button class="sidebar-link btn w-full justify-start" data-view="journal">📚 <span data-i18n="journal"></span></button>
+        <button class="sidebar-link btn w-full justify-start" data-view="stock">📦 <span data-i18n="stock"></span></button>
+        <button class="sidebar-link btn w-full justify-start" data-view="reports">📈 <span data-i18n="reports"></span></button>
+        <button class="sidebar-link btn w-full justify-start" data-view="settings">⚙️ <span data-i18n="settings"></span></button>
+      </nav>
+      <a href="index.html" class="btn btn-ghost w-full mt-6 text-sm" data-i18n="logout"></a>
+    </aside>
+
+    <div class="flex-1 lg:ms-64 min-w-0">
+      <header class="no-print sticky top-0 z-30 bg-white border-b-4 border-slate-900 px-4 py-3 flex items-center gap-3">
+        <button id="openSidebar" class="btn btn-ghost lg:hidden" data-i18n="menu">منو</button>
+        <h1 id="pageTitle" class="font-extrabold text-lg"></h1>
+        <input id="globalSearch" class="field max-w-xs ms-auto hidden sm:block" data-i18n-placeholder="search" placeholder="" />
+        <button id="langToggle" class="btn btn-ghost text-sm">EN</button>
+        <span class="text-sm font-bold border-2 border-slate-800 rounded-xl px-2 py-1" data-i18n="user"></span>
+      </header>
+      <main id="app" class="p-4"></main>
+    </div>
+  </div>
+  <div id="sidebarMask" class="fixed inset-0 bg-slate-900/40 z-30 hidden lg:hidden no-print"></div>
+  <div id="modal" class="modal-backdrop no-print"></div>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/panel.js"></script>
+</body>
+</html>
